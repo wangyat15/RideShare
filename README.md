@@ -9,12 +9,15 @@ Student   : Wang Yat SIN
 Project Title : Ride Share Website
 
 1.	Introduction
+
 The objective of this application is to let people to save money by sharing a taxi ride or a car ride. There is a lot of competition for online car booking service (like Uber). But a service where people can share the same car to go to the same destination are rather less well-known. Therefore, I think this proposal would be a good idea to expand on that niche field which could easily attract more new-users who are exactly looking for this type of service. I will go over the detail on how this application would work below.
 
 2.	Problem statement
+
 Taxi fee is expensive for most of the people but it’s the most convenient and it takes the direct and fastest route to the desired destination. On the other hand, when people choose public transport, while it will be cheaper. However, there are usually no direct route to the desired destination. On top of that, public transport might have unexpected delay, hence taking longer than expected to arrive to destination. Driving car is not exactly a feasible solution as well, not only car fuel is expensive. Especially during work hours, there are constant traffic jams in more crowded areas. At the end, they will need to find a place to park their vehicle. Encouraging the usage of private car will also create more air pollution, because they could have used public transport.
 
 3.	Problem solution
+
 Solution for Ridesharing as reducing traffic congestion and parking problem, and more importantly the air pollution problem of the world.
 
 For car drivers
