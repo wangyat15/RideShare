@@ -13,7 +13,7 @@ body {
   clear: both;
 }
 #mainHeader {
-  background: #333;
+  background: red;
   color: white;
 }
 #mainNav {
@@ -42,22 +42,31 @@ body {
 }
 #jumbo {
   background-image: url('../images/bg.jpg');
+  background-size: auto 300%;
   background-position: center center;
-  min-height: 100px;
+  min-height: 50px;
   text-align: center;
 }
 #jumbo h1 {
-  color: white;
-  font-size: 45px;
-  padding-top: 10px;
+  color: black;
+  font-size: 30px;
+  padding-top: 8px;
   line-height: 1.0em;
 }
+#jumbo p {
+  color: white;
+  font-size: 20px;
+  padding-top: 8px;
+  line-height: 1.0em;
+}
+
 #main {
   float: right;
   width: 30%;
-  padding: 0 30px;
+  padding: 10 30px;
   box-sizing: border-box;
 }
+
 #sidebar {
   float: left;
   width: 70%;
@@ -67,12 +76,13 @@ body {
   letter-spacing: .2em;
   word-spacing: 1em;
 }
+
 #mainFooter {
-  background: #333;
+  background: red;
   color: #fff;
   text-align: center;
-  padding: 20px;
-  margin-top: 50px;
+  padding: 10px;
+  margin-top: 10px;
 }
 #pExample {
   width: 400px;
@@ -102,8 +112,9 @@ body {
   background:#ff652f;
   padding: 5px;
 }
+
 @media (max-width:600px){
-  #main, #sidebar {
+  #sidebar, #main {
     width: 100%;
     float: none;
     border: none;
