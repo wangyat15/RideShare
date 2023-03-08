@@ -25,15 +25,15 @@ Solution for Ridesharing as reducing traffic congestion and parking problem, and
 
 For car drivers
 
--Provide rideshare offer with details: date and time of the route, start location, destination, path in map, no of seats available and price (about 1/4 of taxi ride)
+** Provide rideshare offer with details: date and time of the route, start location, destination, path in map, no of seats available and price (about 1/4 of taxi ride)
 
--Search for the rideshare request with locations, date and time, past rating and comments.  If a rideshare request is found, send a rideshare offer to passengers
+** Search for the rideshare request with locations, date and time, past rating and comments.  If a rideshare request is found, send a rideshare offer to passengers
 
 For passengers 
 
--make a rideshare request with details: date and time of the ride, pickup location, destination location, offer price (about 1/4 of taxi ride)
+** make a rideshare request with details: date and time of the ride, pickup location, destination location, offer price (about 1/4 of taxi ride)
 
--search for the rideshare offer with locations, date and time, and past rating and comments.  If a rideshare offer is found, make a rideshare request to the driver
+** search for the rideshare offer with locations, date and time, and past rating and comments.  If a rideshare offer is found, make a rideshare request to the driver
 
 -Alternatively, after booking a taxi ride, the passenger can make a rideshare offer with details: date and time of the route, start location, destination, path in map, no of seats available and price (taxi fee equally shared by the participants)
 
