@@ -1,5 +1,7 @@
 # CS804 Web Application Development Project
 # Ride Share Website  SRide
+<img src="https://github.com/wangyat15/RideShare/blob/c9d9061dd8352d291e153a6a7dfcfa10eec69a78/SRide%20Logo.png" width="128"/>
+
 Constructor University
 
 Professor : Dr. Mohammed Elhajj
