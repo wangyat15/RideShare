@@ -32,11 +32,11 @@ Solution for Ridesharing as reducing traffic congestion and parking problem, and
 + search for the rideshare offer with locations, date and time, and past rating and comments.  If a rideshare offer is found, make a rideshare request to the driver
 + Alternatively, after booking a taxi ride, the passenger can make a rideshare offer with details on date and time of the route, start location, destination, path in map, no of seats available and price (taxi fee can be equally shared by the participants)
 
-When matching the rideshare offer and request
+### When matching the rideshare offer and request
 + a rideshare offer can match with multiple rideshare requests based on no. of available seats
 + Rideshare offer and request can be either accepted or rejected by either party 
 + if the rideshare is accepted by both parties, it will be confirmed with pickup date, time, location and price
  
-When rideshare is completed
+### When rideshare is completed
 + After the rideshare is completed, both driver and passenger will give rating and comment to the other party for future rideshare reference.
 
