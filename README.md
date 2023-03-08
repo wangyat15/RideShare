@@ -23,27 +23,20 @@ Taxi fee is expensive for most of the people but it’s the most convenient and 
 
 Solution for Ridesharing as reducing traffic congestion and parking problem, and more importantly the air pollution problem of the world.
 
-For car drivers
+##4 For car drivers
 + Provide rideshare offer with details: date and time of the route, start location, destination, path in map, no of seats available and price (about 1/4 of taxi ride)
 + Search for the rideshare request with locations, date and time, past rating and comments.  If a rideshare request is found, send a rideshare offer to passengers
 
-For passengers 
-
-** make a rideshare request with details: date and time of the ride, pickup location, destination location, offer price (about 1/4 of taxi ride)
-
-** search for the rideshare offer with locations, date and time, and past rating and comments.  If a rideshare offer is found, make a rideshare request to the driver
-
--Alternatively, after booking a taxi ride, the passenger can make a rideshare offer with details: date and time of the route, start location, destination, path in map, no of seats available and price (taxi fee equally shared by the participants)
+##4 For passengers 
++ make a rideshare request with details: date and time of the ride, pickup location, destination location, offer price (about 1/4 of taxi ride)
++ search for the rideshare offer with locations, date and time, and past rating and comments.  If a rideshare offer is found, make a rideshare request to the driver
++ Alternatively, after booking a taxi ride, the passenger can make a rideshare offer with details on date and time of the route, start location, destination, path in map, no of seats available and price (taxi fee can be equally shared by the participants)
 
 When matching the rideshare offer and request
-
--a rideshare offer can match with multiple rideshare requests based on no. of available seats
-
--Rideshare offer and request can be either accepted or rejected by either party 
-
--if the rideshare is accepted by both parties, it will be confirmed with pickup date, time, location and price
-
++ a rideshare offer can match with multiple rideshare requests based on no. of available seats
++ Rideshare offer and request can be either accepted or rejected by either party 
++ if the rideshare is accepted by both parties, it will be confirmed with pickup date, time, location and price
+ 
 When rideshare is completed
-
--After the rideshare is completed, both driver and passenger will give rating and comment to the other party for future rideshare reference.
++ After the rideshare is completed, both driver and passenger will give rating and comment to the other party for future rideshare reference.
 
