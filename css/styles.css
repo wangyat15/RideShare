@@ -5,10 +5,11 @@ body {
   margin: 0;
 }
 .container {
-  width: 80%;
+  width: 90%;
   margin: auto;
   overflow: hidden;
 }
+
 .clearFix {
   clear: both;
 }
@@ -40,19 +41,22 @@ body {
 #mainNav li:hover {
   background: #aaa;
 }
+
 #jumbo {
   background-image: url('../images/bg.jpg');
-  background-size: auto 300%;
-  background-position: center center;
+  background-size: auto 400%;  
+  background-position: center;
   min-height: 50px;
   text-align: center;
 }
+
 #jumbo h1 {
-  color: black;
-  font-weight: bold;
+  color: darkslateblue;
+  font-weight: bolder;
   font-size: 30px;
   padding-top: 8px;
   line-height: 1.0em;
+  opacity: 1.0;
 }
 #jumbo p {
   color: black;
@@ -63,20 +67,61 @@ body {
 }
 
 #main {
-  float: right;
-  width: 30%;
-  padding: 10 30px;
+  padding: 10px 30px;
+  border: 5px solid white;
   box-sizing: border-box;
+  word-spacing: 1em;
+  background-color:#C2E9E9;
+}
+#main table {
+  overflow-x: auto;
+  border:1px solid;
+  width: 100%;
+  cellspacing:2; 
+  bgcolor:lightyellow;
+  text-align: center;
 }
 
 #sidebar {
   float: left;
   width: 70%;
   padding: 10px;
-  border-right: 1px solid #333;
+  border: 5px solid darkgreen;
   box-sizing: border-box;
   letter-spacing: .2em;
   word-spacing: 1em;
+  background-color:#C2E9E9; 
+}
+#sideleft {
+  float: left;
+  width: 70%;
+  padding: 10px;
+  border: 5px solid white;
+  box-sizing: border-box;
+  letter-spacing: .2em;
+  word-spacing: 1em;
+  background-color:#C2E9E9; 
+  overflow: hidden;
+}
+#sideright {
+  float: right;
+  width: 30%;
+  padding: 10px;
+  border: 5px solid white;
+  box-sizing: border-box;
+  letter-spacing: .2em;
+  word-spacing: 1em;
+  background-color:#C2E9E9; 
+  overflow: hidden;
+}
+
+#sidebar1 {
+  float: left;
+  width: 20%;
+  border: 5px solid darkgreen;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #C2E9E9;
 }
 
 #mainFooter {
@@ -113,11 +158,24 @@ body {
 #fixed {
   position: fixed;
   bottom: 0;
-  right: 50px;
-  background:#ff652f;
+  left: 50px;
+  <!--background:#ff652f;-->
   padding: 5px;
 }
-
+.button {
+  background-color: darkblue;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 @media (max-width:600px){
   #sidebar, #main {
     width: 100%;
