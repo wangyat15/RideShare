@@ -12,32 +12,32 @@
 <body>
   <header id="mainHeader">
     <div class="container">
-        <h1>Ride Share Website</h1>
+        <h1>Ride Share Website : Passenger</h1>
     </div>
   </header>
-
   <nav id="mainNav">
     <div class="container">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Sign in/up</a></li>
+        <li><a href="myridetrip.html">MyRideTrip</a></li>
+        <li><a href="searchforrs.html">SearchForRide</a></li>
+        <li><a href="addrt.html">AddRideTrip</a></li>
+        <li><a href="#">MyProfile</a></li>
+        <li><a href="index.html">SignOut</a></li>
       </ul>
     </div>
   </nav>
-
+  <!--
   <section id="jumbo">
     <div class="container">
       <h1>Let's Start a RideShare</h1>
       <p>Sharing a ride has numerous benefits such as reducing traffic congestion and parking demands. Ridesharing also helps to eliminate vehicle emissions and creates less stressful commutes. </p>
     </div>
   </section>
-  
+  -->
    
    <div class="container">
     <aside id="sideleft">
-      <h2>Share Ride Detail</h2></br>
+      <h2>Ride Share : Update Status and Rating</h2></br>
       <section id="main">
         <h3>Share Ride Information: </h3>
         <span id="lab">SRide ID:</span> S0001111  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -55,6 +55,7 @@
         <span id="lab">Member ID: </span>M0002030</br>
         <span id="lab">Vehicle Model:</span> 408i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span id="lab">Brand : </span>BMW </br>
         <span id="lab">Vehicle Desc: </span>blue color </br>
+        <span id="lab">Rating (average/no. of ratings) : </span> 4.3 / 123 
       </section>
     </aside>
     <div id="sideright">
@@ -67,56 +68,31 @@
     </div>
     <div class="clearFix"></div>
     <div id="main">
-      <h3>Driver rating and comment history: </h3>
-      <p><span id="lab">Rating (average/no. of ratings) : </span> 4.3 / 123 </p>
-      <table id="table1">
-        <tr>
-          <th>&nbsp;</th>
-          <th>date</th>
-          <th>rating</th>
-          <th>comment</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>23 Dec 2022 </td>
-          <td>4</td>
-          <td>Good and Polite </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>11 Dec 2022 </td>
-          <td>3.8</td>
-          <td>Good driver</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>2 Dec 2022 </td>
-          <td>4</td>
-          <td>Good and Polite </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>23 Sep 2022 </td>
-          <td>4</td>
-          <td>Good and Polite </td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>23 Dec 2021 </td>
-          <td>4</td>
-          <td>Good and Polite </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>1 Oct 2020 </td>
-          <td>5</td>
-          <td>Good and punctual </td>
-        </tr>
-      </table>
+      <h3>Update status and rating </h3>
+      <form action="#" method="post">
+        <span id="lab">Trip Status :</span> 
+        <select>
+          <option Selected>Active</option>
+          <option>Completed</option>
+          <option>Failed</option>
+          <option>Cancelled</option>
+        </select><br/>
+        <span id="lab">Rating (0-5) :</span> 
+        <select>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option Selected>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select><br/>
+        <span id=lab>Comment to driver:</span> <input type="text" required placeholder="Enter your comment to driver" maxlength="100"/> </br>
+        </br>
+      </form>
     </div>
     <div id="main">
-      <a href="index.html" class="button">Return </a>
-      <a href="signin1.html" class="button">Make Request </a>
+      <a href="myridetrip.html" class="button">Save and Return </a>
+      <a href="myridetrip.html" class="button">Cancel </a>
     </div>
 
     

@@ -7,6 +7,7 @@
   <title>RideShare Website</title>
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
   <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/javascript.js"></script>
 </head>
 <body>
   <header id="mainHeader">
@@ -21,7 +22,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#">Sign in/up</a></li>
+        <li><a href="signin.html">Sign in/up</a></li>
       </ul>
     </div>
   </nav>
@@ -33,22 +34,24 @@
     </div>
   </section>
   
-
    <div class="container">
     <section id="main">
       <h2>Search for a Ride</h2>
       <form action="#" method="post">
-        <label>date: <input type="date" placeholder="" /> </label>
-        <label>time: <input type="time"/> to <input type="time" /></label>
-        fare,max(&#8364;0-1000): <input type="range" min="0" max="1000" value = "100" 
+        <label><span id="lab">Date: </span><input type="date" id="today"/> </label>
+        &nbsp;&nbsp;&nbsp;
+        <label><span id="lab">Time:</span> <input type="time"/> to <input type="time" /></label>
+        &nbsp;&nbsp;&nbsp;
+        <span id="lab">Fare,max(&#8364;0-1000): </span><input type="range" min="0" max="1000" value = "100" 
         oninput="this.nextElementSibling.value = this.value" /> 
         <output>100</output>
-        rating min (0-5): <input type="range" min="0" max="5" value = "0" oninput="this.nextElementSibling.value = this.value" /> 
+        &nbsp;&nbsp;&nbsp;
+        <span id="lab">Rating min (0-5):</span> <input type="range" min="0" max="5" value = "0" oninput="this.nextElementSibling.value = this.value" /> 
         <output>0</output>
         <br/>
-        start location: <input type="text" required placeholder="Enter starting address" maxlength="45"/> 
+        <span id=lab>Start location:</span> <input type="text" required placeholder="Enter starting address" maxlength="45"/> 
         &nbsp;&nbsp;&nbsp;
-        Distance from: 
+        <span id="lab">Distance from:</span> 
         <select>
           <option>100m</option>
           <option selected>500m</option>
@@ -60,10 +63,11 @@
 
     </section>
     <div id="main">
-      <h2>List of Available Share Ride </h2>
-      <table>
+      <h3>List of Available Share Ride </h3>
+      <table id="table1">
         <tr>
           <th>&nbsp;</th>
+          <th>SRide ID</th>
           <th>Date</th>
           <th>Time</th>
           <th>Start from</th>
@@ -74,36 +78,40 @@
         </tr>
         <tr>
           <td>1</td>
+          <td> <a href="detailrs.html?mid=1">S0001111 </a></td>
           <td> <a href="detailrs.html?mid=1">1 April 2023 </a></td>
-          <td> 11:00am </td>
-          <td> Jacobs University</td>
-          <td> Bremen Airport </td>
-          <td> 80 </td>
-          <td> 3 </td>
-          <td>3.8 (132) </td>
+          <td> <a href="detailrs.html?mid=1">11:00am </a></td>
+          <td> <a href="detailrs.html?mid=1">Jacobs University</a></td>
+          <td> <a href="detailrs.html?mid=1">Bremen Airport</a> </td>
+          <td> <a href="detailrs.html?mid=1">90 </a></td>
+          <td> <a href="detailrs.html?mid=1">3 </a></td>
+          <td> <a href="detailrs.html?mid=1">3.8 (132)</a> </td>
         </tr>
         <tr>
           <td>2</td>
+          <td> <a href="detailrs.html?mid=1">S0002312 </a></td>
           <td> <a href="detailrs.html?mid=1">1 April 2023 </a></td>
-          <td> 11:00am </td>
-          <td> Jacobs University</td>
-          <td> Bremen Airport </td>
-          <td> 80 </td>
-          <td> 3 </td>
-          <td>3.8 (132) </td>
+          <td> <a href="detailrs.html?mid=1">11:00am </a></td>
+          <td> <a href="detailrs.html?mid=1">Jacobs </a></td>
+          <td> <a href="detailrs.html?mid=1">Bremen Airport </a></td>
+          <td> <a href="detailrs.html?mid=1">80 </a></td>
+          <td> <a href="detailrs.html?mid=1">3 </a></td>
+          <td> <a href="detailrs.html?mid=1">3.8 (132) </a></td>
         </tr>
         <tr>
           <td>3</td>
+          <td> <a href="detailrs.html?mid=1">S0001341 </a></td>
           <td> <a href="detailrs.html?mid=2">1 April 2023 </a></td>
-          <td> 11:00am </td>
-          <td> Jacobs University</td>
-          <td> Bremen Airport </td>
-          <td> 80 </td>
-          <td> 3 </td>
-          <td>3.8 (132) </td>
+          <td> <a href="detailrs.html?mid=2">11:00am</a> </td>
+          <td> <a href="detailrs.html?mid=2">Jacobs University</a></td>
+          <td> <a href="detailrs.html?mid=2">Bremen</a></td>
+          <td> <a href="detailrs.html?mid=2">80 </a></td>
+          <td> <a href="detailrs.html?mid=2">3 </a></td>
+          <td> <a href="detailrs.html?mid=2">3.8 (132) </a></td>
         </tr>
         <tr>
           <td>4</td>
+          <td> <a href="detailrs.html?mid=1">S0004511 </a></td>
           <td> <a href="detailrs.html?mid=3">1 April 2023 </a></td>
           <td> <a href="detailrs.html?mid=3">12:00am</a> </td>
           <td> <a href="detailrs.html?mid=3">Jacobs University</a></td>
@@ -114,23 +122,25 @@
         </tr>
         <tr>
           <td>5</td>
+          <td> <a href="detailrs.html?mid=1">S0061111 </a></td>
           <td> <a href="detailrs.html?mid=4">2 April 2023 </a></td>
           <td> <a href="detailrs.html?mid=4">1:45pm </a></td>
           <td> <a href="detailrs.html?mid=4">Jacobs University</a></td>
           <td> <a href="detailrs.html?mid=4">Bremen Main Station</a></td>
           <td> <a href="detailrs.html?mid=4">70 </a></td>
           <td> <a href="detailrs.html?mid=4">4 </a></td>
-          <td><a href="detailrs.html?mid=4">3.8 (3)</a></td>
+          <td> <a href="detailrs.html?mid=4">3.8 (3)</a></td>
         </tr>
         <tr>
           <td>6</td>
+          <td> <a href="detailrs.html?mid=1">S0079901 </a></td>
           <td> <a href="detailrs.html?mid=5">2 April 2023 </a></td>
-          <td> 3:00pm </td>
-          <td> Jacobs University</td>
-          <td> Bremen Airport </td>
-          <td> 20 </td>
-          <td> 1 </td>
-          <td>3.0 (132) </td>
+          <td> <a href="detailrs.html?mid=5">3:00pm </a></td>
+          <td> <a href="detailrs.html?mid=5">Jacobs University</a></td>
+          <td> <a href="detailrs.html?mid=5">Bremen Airport </a></td>
+          <td> <a href="detailrs.html?mid=5">20 </a></td>
+          <td> <a href="detailrs.html?mid=5">1 </a></td>
+          <td> <a href="detailrs.html?mid=5">4.0 (132) </a></td>
         </tr>
       </table>
     </div>
