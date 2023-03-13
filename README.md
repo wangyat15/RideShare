@@ -40,8 +40,8 @@ Solution for Ridesharing as reducing traffic congestion and parking problem, and
 + Rideshare offer and request can be either accepted or rejected by either party 
 + if the rideshare is accepted by both parties, it will be confirmed the rideshare with pickup date, time, location and fare
  
-### When rideshare is completed
-+ After the rideshare is completed, both driver and passenger will give rating and comment to the other party for future rideshare reference.
+### After a rideshare is completed
++ both driver and passenger will give rating and comment to the other party for future rideshare reference.
 
 ## 4.	Technical Details
 ### Software
