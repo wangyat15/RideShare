@@ -7,7 +7,7 @@ Professor : Dr. Mohammed Elhajj
 
 Student   : Wang Yat SIN
 
-Project URL (status undergoing - only conceptual and layout design) : 
+Project URL (project status undergoing - completed conceptual and layout design) : 
 
 https://htmlpreview.github.io/?https://github.com/wangyat15/RideShare/blob/main/index.html
 
@@ -43,3 +43,20 @@ Solution for Ridesharing as reducing traffic congestion and parking problem, and
 ### When rideshare is completed
 + After the rideshare is completed, both driver and passenger will give rating and comment to the other party for future rideshare reference.
 
+## 4.	Technical Details
+### Software to be used
++ Code editor and IDE: Visual Studio Code
++ Client side: HTML, CSS, JavaScript, JQuery and Ajax with responsible mobile friendly design
++ Server side: Ubuntu, Apache, PHP
++ Database and Database GUI tool: MySQL and Workbench
+
+### Other tools
+This website will be using a number of Google Map APIs for 
++	inputting location address with autocomplete using Google Map API with Place Library 
++	computing the driving distance and time between the start and destination locations 
++ showing  the driving path and distance between the start and destination locations on the map
++ locating and finding the nearby address coordinates within specified distance in km
+
+### Server and hosting
++ Source repository : github
++ Website hosting service : cloud hosting services for servers and websites (To be confirmed) 
