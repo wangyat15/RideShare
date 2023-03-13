@@ -7,7 +7,8 @@ Professor : Dr. Mohammed Elhajj
 
 Student   : Wang Yat SIN
 
-Project URL : 
+Project URL (status undergoing - only conceptual and layout design) : 
+
 https://htmlpreview.github.io/?https://github.com/wangyat15/RideShare/blob/main/index.html
 
 # Project Title : Ride Share Website
