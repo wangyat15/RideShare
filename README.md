@@ -12,7 +12,7 @@ Project preview URL (project status undergoing - completed Phase#2 Conceptual an
 https://htmlpreview.github.io/?https://github.com/wangyat15/RideShare/blob/main/index.html
 
 # Project Title : Ride Share Website
-(Implementation: undergoing Phase#2 - Frontend development)
+(Project status: completed Phase#2 - UI design and frontend development)
 
 ## 1.	Introduction
 
