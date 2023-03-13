@@ -46,7 +46,7 @@ Solution for Ridesharing as reducing traffic congestion and parking problem, and
 ## 4.	Technical Details
 ### Software
 + Code editor and IDE: [Visual Studio Code](https://code.visualstudio.com/)
-+ Client side: HTML, CSS, JavaScript, JQuery and Ajax with responsible mobile friendly design
++ Client side: HTML, CSS, JavaScript, JQuery and Ajax with responsive mobile friendly design
 + Server side: [Ubuntu, Apache](https://ubuntu.com/) and [PHP](https://www.php.net/)
 + Database and Database GUI tool: [MySQL](https://www.mysql.com/) and [Workbench](https://dev.mysql.com/downloads/workbench/)
 
