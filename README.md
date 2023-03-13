@@ -58,5 +58,5 @@ This website will be using a number of [Google Map APIs](https://developers.goog
 + locating and finding the nearby address coordinates within specified distance in km
 
 ### Server and hosting
-+ Source repository : [GitHub Pages](https://github.com/)
++ Source repository : [GitHub](https://github.com/)
 + Website hosting service : cloud hosting services for servers and websites (To be determined) 
