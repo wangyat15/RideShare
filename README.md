@@ -59,4 +59,4 @@ This website will be using a number of [Google Map APIs](https://developers.goog
 
 ### Server and hosting
 + Source repository : [GitHub Pages](https://github.com/)
-+ Website hosting service : cloud hosting services for servers and websites (To be confirmed) 
++ Website hosting service : cloud hosting services for servers and websites (To be determined) 
