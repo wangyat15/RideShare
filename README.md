@@ -9,6 +9,7 @@ Student   : Wang Yat SIN
 
 
 # Project Title : Ride Share Website
+(Implementation: undergoing Phase#2 - Frontend development)
 
 ## 1.	Introduction
 
