@@ -45,13 +45,13 @@ Solution for Ridesharing as reducing traffic congestion and parking problem, and
 
 ## 4.	Technical Details
 ### Software to be used
-+ Code editor and IDE: Visual Studio Code
++ Code editor and IDE: [Visual Studio Code](https://code.visualstudio.com/)
 + Client side: HTML, CSS, JavaScript, JQuery and Ajax with responsible mobile friendly design
-+ Server side: Ubuntu, Apache, PHP
-+ Database and Database GUI tool: MySQL and Workbench
++ Server side: [Ubuntu, Apache](https://ubuntu.com/) and [PHP](https://www.php.net/)
++ Database and Database GUI tool: [MySQL](https://www.mysql.com/) and [Workbench](https://dev.mysql.com/downloads/workbench/)
 
 ### Other tools
-This website will be using a number of Google Map APIs for 
+This website will be using a number of [Google Map APIs](https://developers.google.com/maps) for 
 +	inputting location address with autocomplete using Google Map API with Place Library 
 +	computing the driving distance and time between the start and destination locations 
 + showing  the driving path and distance between the start and destination locations on the map
