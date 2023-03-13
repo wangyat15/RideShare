@@ -7,7 +7,7 @@ Professor : Dr. Mohammed Elhajj
 
 Student   : Wang Yat SIN
 
-Project preview URL (project status undergoing - completed conceptual and UI design) : 
+Project preview URL (project status undergoing - completed Phase#2 Conceptual and UI design) : 
 
 https://htmlpreview.github.io/?https://github.com/wangyat15/RideShare/blob/main/index.html
 
