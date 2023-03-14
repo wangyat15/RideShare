@@ -19,8 +19,8 @@
     <div class="container">
       <ul>
         <li><a href="myrideshare.html">MyRideShare</a></li>
-        <li><a href="searchforrt.html">SearchForRide</a></li>
-        <li><a href="addrs.html">AddRideTrip</a></li>
+        <li><a href="searchforrt.html">SearchForPassenger</a></li>
+        <li><a href="addrs.html">AddRideShare</a></li>
         <li><a href="myprofile1.html">MyProfile</a></li>
         <li><a href="signout.html">SignOut</a></li>
       </ul>
@@ -37,13 +37,172 @@
    
    <div class="container">
     <div id="main">
-
+      <h3>My Ride Share : Member ID/Name : M00008888 David Lam </h3>
+      <table id="table1">
+        <tr>
+          <th>&nbsp;</th>
+          <th>Status</th>
+          <th>RShare ID</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Start from</th>
+          <th>Destination</th>
+          <th>Fare &#8364;</th>
+          <th>No. of sits </th>
+          <th>Msg to Passenger</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td> Accepted</td>
+          <td> S0001111</td>
+          <td> 1 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> 4 </td>
+          <td> Call me when arrive </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td> Accepted</td>
+          <td> S0004444</td>
+          <td> 10 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 100 </td>
+          <td> 4 </td>
+          <td> Call me when arrive </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td> Pending </td>
+          <td> S0003333</td>
+          <td> 2 April 2023</td>
+          <td> 10:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> 4 </td>
+          <td> Meet at main entry </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td> Pending </td>
+          <td> S0006666</td>
+          <td> 5 April 2023</td>
+          <td> 10:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> 2 </td>
+          <td> Meet at main entry </td>
+        </tr><tr>
+          <td><input type="checkbox"/></td>
+          <td> Pending </td>
+          <td> S0006668</td>
+          <td> 12 April 2023</td>
+          <td> 10:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> 2 </td>
+          <td> Meet at main entry </td>
+        </tr>
+      </table>
+      <input type="button" class="button" value="Search For Passenger" onclick="GetSelect6()"/>
+        <input type="button" class="button" value="View Accepted Passenger" onclick="GetSelect7()"/>
+        <input type="button" class="button" value="Update And Rating to a Passenger" onclick="GetSelect8()"/>
     </div>
 
-    <!-- List of Pending Request Reply of a select RTrip -->
+    <!-- List of Pending Request Reply of a select RShare -->
     <div id="main">
-      
+      <h3>List of Pending Request Reply : RShareID S000111 </h3>
+      <table id="table1">
+        <tr>
+          <th>&nbsp;</th>
+          <th>Send by</th>
+          <th>Request Status</th>
+          <th>RShare ID</th>
+          <th>SRide ID</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Start from</th>
+          <th>Destination</th>
+          <th>Fare &#8364;</th>
+          <th>Passenger's message</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td> Driver</td>
+          <td> Accepted </td>
+          <td> T0001111</td>
+          <td> S0002222</td>
+          <td> 1 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> Call me when arrive </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td>Driver</td>
+          <td> Rejected </td>
+          <td> T0001111</td>
+          <td> S0003333</td>
+          <td> 1 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> Call me when arrive </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td>Passenger</td>
+          <td> Rejected </td>
+          <td> T0001111</td>
+          <td> S0004444</td>
+          <td> 1 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> Call me when arrive </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td>Passenger</td>
+          <td> Pending </td>
+          <td> T0001111</td>
+          <td> S0006666</td>
+          <td> 1 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> Call me when arrive </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/></td>
+          <td>Passenger</td>
+          <td> Pending </td>
+          <td> T0001111</td>
+          <td> S0008888</td>
+          <td> 1 April 2023</td>
+          <td> 11:00am </td>
+          <td> Jacobs University</td>
+          <td> Bremen Airport</td>
+          <td> 90 </td>
+          <td> Call me when arrive </td>
+        </tr>
+      </table>
+      <input type="button" class="button" value="Accept a Pending from Passenger" onclick="GetSelect9()"/>
+      <input type="button" class="button" value="Reject a Pending from Passenger" onclick="GetSelect10()"/>
     </div>
+    
     <div class="clearFix"></div>
    </div>
 
