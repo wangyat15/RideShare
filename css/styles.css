@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   margin: auto;
   overflow: hidden;
 }
@@ -82,7 +82,7 @@ body {
   border:1px solid;
   width: 100%;
   border-collapse: collapse;
-  bgcolor:lightyellow;
+  /* background:lightyellow;*/
   text-align: left;
 }
 
@@ -115,7 +115,7 @@ body {
 }
 #sideleft {
   float: left;
-  width: 70%;
+  width: 65%;
   padding: 10px;
   border: 5px solid white;
   box-sizing: border-box;
@@ -126,7 +126,7 @@ body {
 }
 #sideright {
   float: right;
-  width: 30%;
+  width: 35%;
   padding: 10px;
   border: 5px solid white;
   box-sizing: border-box;
@@ -180,7 +180,7 @@ body {
   position: fixed;
   bottom: 0;
   left: 50px;
-  <!--background:#ff652f;-->
+  /* background:#ff652f; */
   padding: 5px;
 }
 .button {
@@ -210,4 +210,3 @@ body {
     border: none;
   }
 }
-
