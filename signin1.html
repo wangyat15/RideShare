@@ -7,7 +7,13 @@
   <title>RideShare Website</title>
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="./js/javascript.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script>
+    
+    </script>
+
 </head>
 <body>
   <header id="mainHeader">
@@ -38,16 +44,25 @@
    <div class="container">
       <section id="main">
         <h2>Sign in (please sign in or sign up, before making a request) </h2>
-        <form action="#" method="post">
-          <label><span id="lab">Email: </span> <input type="text" required placeholder="input email" /> </label></br>
-          <label><span id="lab">Password: </span><input type="password" required placeholder="input password"/><label>
-          </br></br>
-          <!-- <input type="submit" class="button" value="Log in"/> -->
-          <a href="addrt1.html" class="button">Sign in</a>
+        <!-- <form action="#" method="post" onclick="return validate();"> -->
+          <div>
+          <label for="lab">Email:</label>&nbsp;&nbsp;&nbsp;<span id="email_info" style = "color:red" ></span>
+          </div>
+          <div>  
+            <input type="email" name="email_name" id="email" placeholder="input email" /> </br>
+          </div>
+          <div>
+          <label for="lab">Password: </label>&nbsp;&nbsp;&nbsp;<span id="password_info" style="color:red" ></span>
+          </div>
+          <div>
+            <input type="password" name="password" id="password" placeholder="input password"/></br>
+          </div>
+          <br>
+          <input type="submit" class="button" value="Sign in" onclick="return validate1()"/> 
+         <!-- <a href="addrt1.html" class="button">Sign in</a> -->
           <a href="detailrs.html" class="button">cancel</a></br>          
-        </br>
 
-        </form>
+        <!--</form>-->
         </br></br>
         <span font-size="10px">For new member, <a href="signup.html">click here to sign up</a>
           </span>

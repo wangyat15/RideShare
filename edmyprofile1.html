@@ -36,27 +36,38 @@
   -->
    
    <div class="container">
+    <!-- <button onclick="ShowProfile()">Edit My Profile</button> -->
     <div id="main">
       <h2>Edit My Profile</h2>
-        </br>
-        <Form >
+      <span id="error_message" style = "color:red"></span>  
+        <br> 
+
+      <!--  <Form > -->
           <span id="lab">Member ID : </span> M00002222 <br>
-          <span id="lab">Name : </span><input type="text" required placeholder="input your name" /><br>
-          <span id="lab">Mobile prefix : </span><input type="text" required placeholder="input mobile prefile +49" /><br>
-          <span id="lab">Mobile number : </span><input type="text" required placeholder="input mobile numher" /><br>
-          <span id="lab">Email : </span><input type="email" required placeholder="input email address" /><br>
-        </Form>
+          <span id="lab">Name : </span><input type="text" id="name" required placeholder="input your name" /><br>
+          <span id="lab">Mobile prefix : </span><input type="text" id="mobile_prefix" required placeholder="input mobile prefile +49" /><br>
+          <span id="lab">Mobile number : </span><input type="text" id="mobile" required placeholder="input mobile numher" /><br>
+          <span id="lab">Email : </span><input type="email" id="email" required placeholder="input email address" /><br>
+       <!-- </Form> -->
         </br>
     </div>
+
+    <br>
+    <button id="VID" onclick="ShowVehicleInformation()">hide - Vehicle Information</button>
+
+    <div id="VehicleInformation">
     <div id="main">
-      <h3>For Driver only, Vehicel Information </h3>
+      <h3>For Driver only, Vehicle Information </h3>
         <span id="lab">Vehicle No : </span><input type="text" required placeholder="input Vehicle no" /><br>
         <span id="lab">Vehicle Model : </span><input type="text" required placeholder="input Vehicle Model" /><br>
         <span id="lab">Vehicle Brand : </span><input type="text" required placeholder="input Vehicle Brand" /><br>
         <span id="lab">Vehicle Description : </span><input type="text" required placeholder="input Vehicle Description" /><br>
     </div>  
+    </div>
     <div id="main">
-        <a href="myprofile1.html" class="button">Save and return</a>
+    <input type="submit" class="button" value="Save and return" onclick="return edprofile1_validate()"/>   
+      <!-- <a href="myprofile1.html" class="button">Save and return</a> -->
+
         <a href="myprofile1.html" class="button">Cancel</a>
         </br>
     </div>

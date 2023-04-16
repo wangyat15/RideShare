@@ -6,10 +6,59 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>RideShare Website</title>
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
+  
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="./js/javascript.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&callback=initMap&libraries=places"></script>
+  <script language="javascript" type="text/javascript"> 
+
+  function initMap() {
+    var myLatLng = { lat: 53.1670277, lng: 8.6515237};  // Jacobs University
+    var myLatLng1 = { lat: 53.0479714, lng: 8.7858737 }; // Bremen Airport
+    var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    var map;
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var mapOptions = {
+      zoom: 15,
+      center: myLatLng,
+    };
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    directionsDisplay.setMap(map);
+
+    var start = new google.maps.LatLng(myLatLng);
+    var end = new google.maps.LatLng(myLatLng1);
+    var ddist = 'distance';
+    var dtime = 'time';
+    var request = {
+      origin: start,
+      destination: end,
+      travelMode: google.maps.TravelMode.DRIVING
+    };
+
+    directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+        directionsDisplay.setMap(map);
+        
+         var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+        if (!directionsData){
+          alert("Directions request failed");
+        } else {
+          document.getElementById("msg").innerHTML += "Driving Distance(time): "+ directionsData.distance.text + "(" + directionsData.duration.text + ")";
+        }
+              
+      } else {
+        alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+      }
+    });
+ }
+</script>
+
 </head>
-<body>
+<body onload="initMap()">
   <header id="mainHeader">
     <div class="container">
         <h1>Ride Share Website : Driver</h1>
@@ -56,13 +105,13 @@
       </section>
     </aside>
     <div id="sideright">
-      <h3>Passenger route and map</h3>
-      <span id="lab">Driving distance : </span>90km</br>
-      <span id="lab">Driving time : </span>0.5 hours</br>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3503.575022750921!2d77.31301609999998!3d28.58252155000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sTech+Altum%2C+Naya+Bans+Village%2C+Sector+15%2C+Noida%2C+Uttar+Pradesh%2C+India!5e0!3m2!1sen!2s!4v1391062749471" 
-      style="width:100%; border:0" height="350">
-      </iframe>
+      <section id="msg" style= "font-weight:bold;"></section>
+      <section>
+      <h3>Driving path and map</h3>
+      <div id="map" style="height: 400px;"></div>
+      </section>
     </div>
+
     <div class="clearFix"></div>
     <div id="main">
       <h3>Passenger rating and comment history: </h3>
