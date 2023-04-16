@@ -10,8 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="./js/javascript.js"></script>
   <script src="./js/jquery.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&callback=initMap&libraries=places"></script>
-  
+<!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&callback=initMap&libraries=places">
+  -->
+  </script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&libraries=places&callback=initMap"></script>
     
   <script language="javascript" type="text/javascript"> 
     function initMap() {
@@ -82,7 +86,8 @@
      }
 
     }
-       
+
+    
    
     function setCurrentDate() {
       var now = new Date();
@@ -93,6 +98,8 @@
       $('#today').val(today);
       $('#ctime').val(time);
     }
+    function gmNoop() { console.log('GMap Callback') }
+
     </script>
 </head>
 
