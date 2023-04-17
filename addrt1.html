@@ -6,20 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>RideShare Website</title>
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
-
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="./js/javascript.js"></script>
   <script src="./js/jquery.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&callback=initMap&libraries=places"></script>
-  <script language="javascript" type="text/javascript"> 
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&libraries=places&callback=initMap"></script>
+
+<script language="javascript" type="text/javascript"> 
 
   function initMap() {
-  // passenger path and 
+  // Show the starting and destination path on map1
+  var vlatA = 53.1670277; // origin location
+  var vlongA = 8.6516237;  
+  var vlatB = 53.1670277; // destination location
+  var vlongB = 8.6516237;  
   if (navigator.geolocation) {    
-        navigator.geolocation.getCurrentPosition(function(sPosition){
-        vlat = sPosition.coords.latitude;
-        vlong = sPosition.coords.longitude;
+//        navigator.geolocation.getCurrentPosition(function(sPosition){
+//        vlat = sPosition.coords.latitude;
+//        vlong = sPosition.coords.longitude;
+        var vlat = 53.1670277; // default location at Jacobs University
+        var vlong = 8.6516237;  
         var map1 = new google.maps.Map(document.getElementById('map1'), {
           zoom: 16,
           center: {lat: vlat, lng: vlong}
@@ -29,19 +34,12 @@
         var autocomplete;
         var autocomplete1;
         autocomplete = new google.maps.places.Autocomplete(input), {
-          types: ['geocode'],
-          componentRestrictions: {
-            country: "GERMANY"
-          }
-        };
+          types: ['geocode']};
         autocomplete1 = new google.maps.places.Autocomplete(input1), {
-          types: ['geocode'],
-          componentRestrictions: {
-            country: "GERMANY"
-          }
-        };
+          types: ['geocode']};
+
         autocomplete.bindTo('bounds', map1);
-        autocomplete1.bindTo('bounds',map2);
+        autocomplete1.bindTo('bounds',map1);
 
         var marker = new google.maps.Marker({
           map: map1,
@@ -50,9 +48,8 @@
         var marker1 = new google.maps.Marker({
           map: map1,
           anchorPoint: new google.maps.Point(0, -29)
-        });
-        
-
+        }); 
+        // starting location and show the location on Map
         autocomplete.addListener('place_changed', function() {
           marker.setVisible(false);
           var place = autocomplete.getPlace();
@@ -70,9 +67,9 @@
           marker.setPosition(place.geometry.location);
           marker.setVisible(true);
 
-          var address = '';
+          var start_address = '';
           if (place.address_components) {
-            address = [
+            start_address = [
               (place.address_components[0] && place.address_components[0].short_name || ''),
               (place.address_components[1] && place.address_components[1].short_name || ''),
               (place.address_components[2] && place.address_components[2].short_name || '')
@@ -84,51 +81,63 @@
                 'Latitude: ' + place.geometry.location.lat() + '<br>' +
                 'Longitude: ' + place.geometry.location.lng() + '</div>'
           });
-          infowindow.open(map1, marker);
+          infowindow.open(map1, marker);     
+          vlatA = place.geometry.location.lat();
+          vlongA = place.geometry.location.lng();       
         });
+
+        // destination location and show the driving path and distance 
         autocomplete1.addListener('place_changed', function() {
-          marker.setVisible(false);
+          marker1.setVisible(false);
           var place1 = autocomplete1.getPlace();
           if (!place1.geometry) {
-            window.alert("No details available for input: '" + place.name + "'");
+            window.alert("No details available for input: '" + place1.name + "'");
             return;
           }
-
-          if (place1.geometry.viewport) {
-            map1.fitBounds(place1.geometry.viewport);
-          } else {
-            map1.setCenter(place1.geometry.location);
-            map1.setZoom(17);
-          }
-          marker.setPosition(place1.geometry.location);
-          marker.setVisible(true);
-
-          var address = '';
-          if (place.address_components) {
-            address = [
-              (place1.address_components[0] && place1.address_components[0].short_name || ''),
-              (place1.address_components[1] && place1.address_components[1].short_name || ''),
-              (place1.address_components[2] && place1.address_components[2].short_name || '')
-            ].join(' ');
-          }
-          
-          var infowindow1 = new google.maps.InfoWindow({
-            content: '<div><strong>' + end_address + '</strong><br>' +
-                'Latitude: ' + place1.geometry.location.lat() + '<br>' +
-                'Longitude: ' + place1.geometry.location.lng() + '</div>'
+          vlatB = place1.geometry.location.lat();
+          vlongB = place1.geometry.location.lng();
+          // show the driving path from origin to destination
+          var myLatLngA = { lat: vlatA, lng: vlongA};  // origin lat, long
+          var myLatLngB = { lat: vlatB, lng: vlongB}; // destination lat, long
+          var directionsDisplay1;
+          var directionsService1 = new google.maps.DirectionsService();
+          directionsDisplay1 = new google.maps.DirectionsRenderer();
+          var mapOptions = {
+            zoom: 15,
+            center: myLatLngA,
+          };
+          map1 = new google.maps.Map(document.getElementById('map1'), mapOptions);
+          directionsDisplay1.setMap(map1);
+          var start1 = new google.maps.LatLng(myLatLngA);
+          var end1 = new google.maps.LatLng(myLatLngB);
+          var request1 = {
+            origin: start1,
+            destination: end1,
+            travelMode: google.maps.TravelMode.DRIVING
+          };
+          directionsService1.route(request1, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+              directionsDisplay1.setDirections(response);
+              directionsDisplay1.setMap(map1);          
+              var directionsData1 = response.routes[0].legs[0]; // Get data about the mapped route
+              if (!directionsData1){
+                alert("Directions request failed");
+              } else {
+                document.getElementById("msg1").innerHTML = "Driving Distance(time): "+ directionsData1.distance.text + "(" + directionsData1.duration.text + ")";
+              }
+                    
+            } else {
+              alert("Directions Request from " + start1.toUrlValue(6) + " to " + end1.toUrlValue(6) + " failed: " + status);
+            }
           });
-          infowindow1.open(map1, marker);
         });
-        /* $(document).ready(function() { 
-        setCurrentDate()
-        });*/
-      });
+//      }); // for getCurrentPosition
      }   
        else {
          alert("Geolocation is not supported by this browser.");
      }
   
-  // share ride details and path  
+  // share ride details and path on map, from driver
     var myLatLng = { lat: 53.1670277, lng: 8.6515237};  // Jacobs University
     var myLatLng1 = { lat: 53.0479714, lng: 8.7858737 }; // Bremen Airport
     var directionsDisplay;
@@ -161,9 +170,8 @@
         if (!directionsData){
           alert("Directions request failed");
         } else {
-          document.getElementById("msg").innerHTML += "Driving Distance(time): "+ directionsData.distance.text + "(" + directionsData.duration.text + ")";
-        }
-              
+          document.getElementById("msg").innerHTML = "Driving Distance(time): "+ directionsData.distance.text + "(" + directionsData.duration.text + ")";
+        }             
       } else {
         alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
       }
@@ -202,25 +210,29 @@
     <div class="main">
       <div id="sideleft">
          <h2>Add a new RideTrip by passenger</h2>
-         <form action="#" method="post">
+<!--         <form action="#" method="post"> -->
            <span id="lab"> Date : </span> 01 April 2023</br>
            <label><span id="lab">Time:</span> <input type="time" id="itime" required/></label> </br>
            <span id="lab">Fare per passenger in &#8364: </span><input id="fare" type="text" required placeholder="input fare" /> 
            <br/>
-           <span id="lab">Number of passengers: </span><input type="text" id="num_passenger" required placeholder="input number of passengers" value="1"/> 
+           <span id="lab">Number of passengers: </span><input type="text" id="npassenger" required placeholder="input number of passengers" value="1"/> 
            <br/>
-           <span id=lab>Start location:</span> <input type="text" id="start_address" placeholder="Enter starting address" style="width: 350px" maxlength="100"/> <br>
-           <span id=lab>Destination:</span> <input type="text" id="end_address" placeholder="Destination address" style="width: 350px" maxlength="100"/> 
+           <span id=lab>Start location:</span> <input type="text" id="start_address" placeholder="Enter start address (w autocomplete)" style="width: 350px" maxlength="100"/> <br>
+           <span id=lab>Destination:</span> <input type="text" id="end_address" placeholder="Destination address (w autocomplete)" style="width: 350px" maxlength="100"/> 
            <br>
-          <span id="lab">Passenger note to driver: </span><input type="text" id="note" style="width: 350px" required placeholder="input any note to driver" /> 
+          <span id="lab">Passenger note to driver: </span><input type="text" id="note" style="width: 400px" placeholder="input any note to driver" /> 
            </br> </br>
            <!-- <input type="submit" class="button" value="Save and send request to Driver"> -->
-           <a class="button" href="myridetrip.html">Save and send request</a>
+<!--           <a class="button" href="myridetrip.html">Save and send request</a> -->
+           <input type="submit" class="button" value="Save and send request" onclick="return add_validate()"/>
            <input type="cancel" class="button" value="Cancel">
+           <br>
+           <span id="error_message" style = "color:red"></span>
           </br>
-         </form>
+<!--         </form> -->
       </div>
       <div id="sideright">
+        <section id="msg1" style= "font-weight:bold;"></section>
         <div id="map1" style="height: 500px;"></div>
       </div>
       </div>
@@ -261,9 +273,7 @@
     <div class="clearFix"></div>
     </div>
   </div>
-
-
-  
+ 
   <footer id="mainFooter">
     <p>Copyright &copy; 2023 RideShare Website  </p>
     <p>Imprint</p>

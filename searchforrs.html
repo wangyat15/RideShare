@@ -7,18 +7,18 @@
   <title>RideShare Website</title>
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="./js/javascript.js"></script>
   <script src="./js/jquery.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&callback=initMap&libraries=places"></script>
-  
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&libraries=places&callback=initMap"></script>
     
   <script language="javascript" type="text/javascript"> 
     function initMap() {
       if (navigator.geolocation) {    
-        navigator.geolocation.getCurrentPosition(function(sPosition){
-        vlat = sPosition.coords.latitude;
-        vlong = sPosition.coords.longitude;
+//        navigator.geolocation.getCurrentPosition(function(sPosition){  // get the current position, but only support https
+//        vlat = sPosition.coords.latitude;
+//        vlong = sPosition.coords.longitude;
+        var vlat = 53.1670277; // default location at Jacobs University
+        var vlong = 8.6516237;  
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
           center: {lat: vlat, lng: vlong}
@@ -26,11 +26,9 @@
         var input = document.getElementById('address');
         var autocomplete;
         autocomplete = new google.maps.places.Autocomplete(input), {
-          types: ['geocode'],
-          componentRestrictions: {
-            country: "GERMANY"
+          types: ['geocode']
           }
-        };
+        
         autocomplete.bindTo('bounds', map);
 
         var marker = new google.maps.Marker({
@@ -75,13 +73,13 @@
         /* $(document).ready(function() { 
         setCurrentDate()
         });*/
-      });
+//      }); // get currentPosition
      }   
-       else {
+       else{
          alert("Geolocation is not supported by this browser.");
      }
-
     }
+    
        
     function setCurrentDate() {
       var now = new Date();
@@ -92,7 +90,7 @@
       $('#today').val(today);
       $('#ctime').val(time);
     }
-    </script>
+  </script>
 
 </head>
 <body onload="initMap()">
@@ -135,7 +133,7 @@
               <option>15 minutes</option>
               <option selected>30 minutes</option>
               <option>60 minutes</option>
-              <option>120 minutes</option>
+              <option>120 minutes or above</option>
             </select>
    
           &nbsp;&nbsp;&nbsp;
@@ -147,13 +145,13 @@
           <span id="lab">Rating min (0-5):</span> <input type="range" min="0" max="5" value = "0" oninput="this.nextElementSibling.value = this.value" /> 
           <output>0</output>
           <br/>
-          <span id=lab>Start location:</span> <input type="text" id=address placeholder="Enter starting address" style="width: 350px" maxlength="100"/> 
+          <span id=lab>Start location:</span> <input type="text" id=address placeholder="Enter start address (w autocomplete)" style="width: 350px" maxlength="100"/> 
           <span id="lab">Distance within:</span> 
           <select>
             <option>100m</option>
             <option selected>500m</option>
             <option>1km</option>
-            <option>2km</option>
+            <option>2km or above</option>
           </select><br/>
   <!--        <a href="index.html" class="button">Search </a></br> -->
           <input type="submit" class="button" value="Search" onclick="return rsvalidate()"/>
@@ -164,6 +162,7 @@
   
     </div>
     <div id="sideright">
+      <h3>Location of the start location</h2>
       <div id="map" style="height: 500px;"></div>
     </div>
 

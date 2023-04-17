@@ -8,8 +8,137 @@
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/javascript.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&libraries=places&callback=initMap"></script>
+
+  <script language="javascript" type="text/javascript"> 
+  function initMap() {
+    // Show the starting and destination path on map1
+    var vlatA = 53.1670277; // origin location
+    var vlongA = 8.6516237;  
+    var vlatB = 53.1670277; // destination location
+    var vlongB = 8.6516237;  
+    if (navigator.geolocation) {    
+  //        navigator.geolocation.getCurrentPosition(function(sPosition){
+  //        vlat = sPosition.coords.latitude;
+  //        vlong = sPosition.coords.longitude;
+          var vlat = 53.1670277; // default location at Jacobs University
+          var vlong = 8.6516237;  
+          var map1 = new google.maps.Map(document.getElementById('map1'), {
+            zoom: 16,
+            center: {lat: vlat, lng: vlong}
+          });
+          var input = document.getElementById('start_address');
+          var input1 = document.getElementById('end_address');
+          var autocomplete;
+          var autocomplete1;
+          autocomplete = new google.maps.places.Autocomplete(input), {
+            types: ['geocode']};
+          autocomplete1 = new google.maps.places.Autocomplete(input1), {
+            types: ['geocode']};
+  
+          autocomplete.bindTo('bounds', map1);
+          autocomplete1.bindTo('bounds',map1);
+  
+          var marker = new google.maps.Marker({
+            map: map1,
+            anchorPoint: new google.maps.Point(0, -29)
+          });
+          var marker1 = new google.maps.Marker({
+            map: map1,
+            anchorPoint: new google.maps.Point(0, -29)
+          }); 
+          // starting location and show the location on Map
+          autocomplete.addListener('place_changed', function() {
+            marker.setVisible(false);
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+              window.alert("No details available for input: '" + place.name + "'");
+              return;
+            }
+  
+            if (place.geometry.viewport) {
+              map1.fitBounds(place.geometry.viewport);
+            } else {
+              map1.setCenter(place.geometry.location);
+              map1.setZoom(17);
+            }
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+  
+            var start_address = '';
+            if (place.address_components) {
+              start_address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+              ].join(' ');
+            }
+            
+            var infowindow = new google.maps.InfoWindow({
+              content: '<div><strong>' + start_address + '</strong><br>' +
+                  'Latitude: ' + place.geometry.location.lat() + '<br>' +
+                  'Longitude: ' + place.geometry.location.lng() + '</div>'
+            });
+            infowindow.open(map1, marker);     
+            vlatA = place.geometry.location.lat();
+            vlongA = place.geometry.location.lng();       
+          });
+  
+          // destination location and show the driving path and distance 
+          autocomplete1.addListener('place_changed', function() {
+            marker1.setVisible(false);
+            var place1 = autocomplete1.getPlace();
+            if (!place1.geometry) {
+              window.alert("No details available for input: '" + place1.name + "'");
+              return;
+            }
+            vlatB = place1.geometry.location.lat();
+            vlongB = place1.geometry.location.lng();
+            // show the driving path from origin to destination
+            var myLatLngA = { lat: vlatA, lng: vlongA};  // origin lat, long
+            var myLatLngB = { lat: vlatB, lng: vlongB}; // destination lat, long
+            var directionsDisplay1;
+            var directionsService1 = new google.maps.DirectionsService();
+            directionsDisplay1 = new google.maps.DirectionsRenderer();
+            var mapOptions = {
+              zoom: 15,
+              center: myLatLngA,
+            };
+            map1 = new google.maps.Map(document.getElementById('map1'), mapOptions);
+            directionsDisplay1.setMap(map1);
+            var start1 = new google.maps.LatLng(myLatLngA);
+            var end1 = new google.maps.LatLng(myLatLngB);
+            var request1 = {
+              origin: start1,
+              destination: end1,
+              travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService1.route(request1, function(response, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay1.setDirections(response);
+                directionsDisplay1.setMap(map1);          
+                var directionsData1 = response.routes[0].legs[0]; // Get data about the mapped route
+                if (!directionsData1){
+                  alert("Directions request failed");
+                } else {
+                  document.getElementById("msg1").innerHTML = "Driving Distance(time): "+ directionsData1.distance.text + "(" + directionsData1.duration.text + ")";
+                }
+                      
+              } else {
+                alert("Directions Request from " + start1.toUrlValue(6) + " to " + end1.toUrlValue(6) + " failed: " + status);
+              }
+            });
+          });
+  //      }); // for getCurrentPosition
+       }   
+         else {
+           alert("Geolocation is not supported by this browser.");
+       }
+   }
+</script>
 </head>
-<body>
+<body onload="initMap()">
   <header id="mainHeader">
     <div class="container">
         <h1>Ride Share Website : Passenger</h1>
@@ -39,39 +168,36 @@
     <div class="main">
       <div id="sideleft">
          <h2>Add a new RideTrip by passenger</h2>
-         <form action="#" method="post">
+<!--         <form action="#" method="post"> -->
            <span id="lab"> Date : </span> 01 April 2023</br>
-           <label><span id="lab">Time:</span> <input type="time" required/></label> </br>
-           <span id="lab">Fare per passenger in &#8364: </span><input type="text" required placeholder="input fare" /> 
+           <label><span id="lab">Time:</span> <input type="time" id="itime" required/></label> </br>
+           <span id="lab">Fare per passenger in &#8364: </span><input type="text" id="fare" required placeholder="input fare" /> 
            <br/>
-           <span id="lab">Number of passengers: </span><input type="text" required placeholder="input number of passengers" value="1"/> 
+           <span id="lab">Number of passengers: </span><input type="text" id="npassenger" required placeholder="input number of passengers" value="1"/> 
            <br/>
-           <span id=lab>Start location:</span> <input type="text" required placeholder="Enter starting address" maxlength="45"/> </br>
-           <span id=lab>Destination:</span> <input type="text" required   placeholder="Enter destination address" maxlength="45"/> </br>
-           <span id="lab">Passenger note to driver: </span><input type="text" required placeholder="input any note to driver" /> 
+           <span id="lab">Start location:</span> <input type="text" id="start_address" required placeholder="Enter start address (w autocomplete)" style="width: 350px" maxlength="100"/> </br>
+           <span id="lab">Destination:</span> <input type="text" id="end_address" required placeholder="Enter destination address (w autocomplete)" style="width: 350px" maxlength="100"/> </br>
+           <span id="lab">Passenger note to driver: </span><input type="text" id="inote" placeholder="input any note to driver" style="width: 500px" maxlength="100"/> 
            </br> </br>
            <!-- <input type="submit" class="button" value="Save and send request to Driver"> -->
-           <a class="button" href="myridetrip.html">Save and return</a>
-           <input type="cancel" class="button" value="Cancel">
+          <!-- <a class="button" href="myridetrip.html">Save and return</a> -->
           </br>
-         </form>
+          <input type="submit" class="button" value="Save and send request" onclick="return add_validate()"/>
+<!--      <input type="cancel" class="button" value="Cancel"> -->
+          <a class="button" href="myridetrip.html">Cancel</a> 
+
+          <br>
+          <span id="error_message" style = "color:red"></span>
+<!--         </form> -->
       </div>
       <div id="sideright">
-        <button onclick="ShowMap()">Toggle Map</button>
-        <h3>Passenger route and map</h3>
-        <span id="lab">Route distance : </span>90km</br>
-        <span id="lab">Route time : </span>0.5 hours</br>
-        <div id="Map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3503.575022750921!2d77.31301609999998!3d28.58252155000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sTech+Altum%2C+Naya+Bans+Village%2C+Sector+15%2C+Noida%2C+Uttar+Pradesh%2C+India!5e0!3m2!1sen!2s!4v1391062749471" 
-      style="width:100%; border:0" height="350">
-      </iframe>
-      </div>
-      </div>
+        <section id="msg1" style= "font-weight:bold;"></section>
+        <div id="map1" style="height: 500px;"></div>
+       </div>
     </div>
     <div class="clearFix"></div>
   </div>
 
-  
   <footer id="mainFooter">
     <p>Copyright &copy; 2023 RideShare Website  </p>
     <p>Imprint</p>

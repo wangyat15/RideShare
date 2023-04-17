@@ -39,17 +39,17 @@ function validate() {
   var emailName = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   if (emailName == "") {
-    document.getElementById("email_info").innerHTML = "required";
+    document.getElementById("email_info").innerHTML += "email required; ";
     $valid = false;
   }
   if (emailName.match(mailformat)) {
     document.getElementById("email_info").innerHTML = "";
   } else {
-    document.getElementById("email_info").innerHTML = "invalid email address";
+    document.getElementById("email_info").innerHTML += "invalid email address; ";
     $valid = false;
   }
   if (password == "") {
-    document.getElementById("password_info").innerHTML = "required";
+    document.getElementById("password_info").innerHTML += "password required; ";
     $valid = false;
   }
   if ($valid == true) {
@@ -69,17 +69,17 @@ function validate1() {
   var emailName = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   if (emailName == "") {
-    document.getElementById("email_info").innerHTML = "required";
+    document.getElementById("email_info").innerHTML += "email required; ";
     $valid = false;
   }
   if (emailName.match(mailformat)) {
     document.getElementById("email_info").innerHTML = "";
   } else {
-    document.getElementById("email_info").innerHTML = "invalid email address";
+    document.getElementById("email_info").innerHTML += "invalid email address; ";
     $valid = false;
   }
   if (password == "") {
-    document.getElementById("password_info").innerHTML = "required";
+    document.getElementById("password_info").innerHTML += "password required;";
     $valid = false;
   }
   if ($valid == true) {
@@ -95,7 +95,7 @@ function ivalidate() {
   document.getElementById("error_message").innerHTML = "";
   var address_a = document.getElementById("address").value;
   if (address_a == "") {
-    document.getElementById("error_message").innerHTML = "must input starting address";
+    document.getElementById("error_message").innerHTML += "must input start Location; ";
     $valid = false;
   }
   if ($valid == true) {
@@ -104,6 +104,77 @@ function ivalidate() {
   return $valid;
 }
 
+// for addrt.html, addrt1.html 
+function add_validate() {
+  var $valid = true;
+  document.getElementById("error_message").innerHTML = "";
+  var vitime = document.getElementById("itime").value;
+  var vfare = document.getElementById("fare").value;
+  var vnpassenger = document.getElementById("npassenger").value;
+  var vstart_address = document.getElementById("start_address").value;
+  var vend_address = document.getElementById("end_address").value;
+  if (vitime == "") {
+      document.getElementById("error_message").innerHTML += "invalid time; ";
+    $valid = false;
+  }
+  if (vfare == "" || isNaN(vfare)) {
+    document.getElementById("error_message").innerHTML += "invalid fare; ";
+  $valid = false;
+  }
+  if (vnpassenger == "" || isNaN(vnpassenger)) {
+    document.getElementById("error_message").innerHTML += "invalid number of passenger; ";
+  $valid = false;
+  }
+  if (vstart_address == "") {
+    document.getElementById("error_message").innerHTML += "invalid start address; ";
+  $valid = false;
+  }
+  if (vend_address == "") {
+    document.getElementById("error_message").innerHTML += "invalid destination address; ";
+  $valid = false;
+  }
+  
+  if ($valid == true) {
+    location.href = "myridetrip.html";
+  } 
+  return $valid;
+}
+
+// for addrs.html 
+function addshare_validate() {
+  var $valid = true;
+  document.getElementById("error_message").innerHTML = "";
+  var vitime = document.getElementById("itime").value;
+  var vfare = document.getElementById("fare").value;
+  var vnseat = document.getElementById("nseat").value;
+  var vstart_address = document.getElementById("start_address").value;
+  var vend_address = document.getElementById("end_address").value;
+  if (vitime == "") {
+      document.getElementById("error_message").innerHTML += "invalid time; ";
+    $valid = false;
+  }
+  if (vfare == "" || isNaN(vfare)) {
+    document.getElementById("error_message").innerHTML += "invalid fare; ";
+  $valid = false;
+  }
+  if (vnseat == "" || isNaN(vnseat)) {
+    document.getElementById("error_message").innerHTML += "invalid number of passenger; ";
+  $valid = false;
+  }
+  if (vstart_address == "") {
+    document.getElementById("error_message").innerHTML += "invalid start address; ";
+  $valid = false;
+  }
+  if (vend_address == "") {
+    document.getElementById("error_message").innerHTML += "invalid destination address; ";
+  $valid = false;
+  }
+  
+  if ($valid == true) {
+    location.href = "myrideshare.html";
+  } 
+  return $valid;
+}
 
 // for signup.html
 function signup_validate() {
@@ -117,7 +188,7 @@ function signup_validate() {
   var vpassword = document.getElementById("password").value;
   var vrpassword = document.getElementById("rpassword").value;
   if (vname == "") {
-      document.getElementById("error_message").innerHTML += "must input name; ";
+      document.getElementById("error_message").innerHTML += "invalid name; ";
     $valid = false;
   }
   if (vmobile_prefix == "" || isNaN(vmobile_prefix)) {
@@ -158,7 +229,7 @@ function edprofile_validate() {
   var vemail = document.getElementById("email").value;
   console.log("vname");
   if (vname == "") {
-      document.getElementById("error_message").innerHTML += "must input name; ";
+      document.getElementById("error_message").innerHTML += "invalid name; ";
     $valid = false;
   }
   if (vmobile_prefix == "" || isNaN(vmobile_prefix)) {
@@ -192,7 +263,7 @@ function edprofile1_validate() {
   var vemail = document.getElementById("email").value;
   console.log("vname");
   if (vname == "") {
-      document.getElementById("error_message").innerHTML += "must input name; ";
+      document.getElementById("error_message").innerHTML += "invalid name; ";
     $valid = false;
   }
   if (vmobile_prefix == "" || isNaN(vmobile_prefix)) {
@@ -222,7 +293,7 @@ function rsvalidate() {
   document.getElementById("error_message").innerHTML = "";
   var address_a = document.getElementById("address").value;
   if (address_a == "") {
-    document.getElementById("error_message").innerHTML = "must input starting address";
+    document.getElementById("error_message").innerHTML = "must input start location";
     $valid = false;
   }
   if ($valid == true) {
@@ -237,7 +308,7 @@ function rtvalidate() {
   document.getElementById("error_message").innerHTML = "";
   var address_a = document.getElementById("address").value;
   if (address_a == "") {
-    document.getElementById("error_message").innerHTML = "must input starting address";
+    document.getElementById("error_message").innerHTML = "must input start location";
     $valid = false;
   }
   if ($valid == true) {

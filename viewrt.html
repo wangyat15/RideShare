@@ -8,11 +8,11 @@
   <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
 
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="./js/javascript.js"></script>
   <script src="./js/jquery.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&callback=initMap&libraries=places"></script>
-  <script language="javascript" type="text/javascript"> 
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mWeGiZ7Ig1M3q-QWmbU6cM0JEx8yF2c&libraries=places&callback=initMap"></script> 
+
+<script language="javascript" type="text/javascript"> 
 
   function initMap() {
     var myLatLng = { lat: 53.1670277, lng: 8.6515237};  // Jacobs University
@@ -43,11 +43,11 @@
         directionsDisplay.setDirections(response);
         directionsDisplay.setMap(map);
         
-         var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+        var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
         if (!directionsData){
           alert("Directions request failed");
         } else {
-          document.getElementById("msg").innerHTML += "Driving Distance(time): "+ directionsData.distance.text + "(" + directionsData.duration.text + ")";
+          document.getElementById("msg").innerHTML = "Driving Distance(time): "+ directionsData.distance.text + "(" + directionsData.duration.text + ")";
         }
               
       } else {
