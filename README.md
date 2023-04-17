@@ -9,7 +9,8 @@ Student   : Wang Yat SIN
 
 Project preview URL (project status undergoing - completed Phase#2 Conceptual and UI design) : 
 
-https://htmlpreview.github.io/?https://github.com/wangyat15/RideShare/blob/main/index.html
+Preview (@Google Cloud Server)
+[Click here to preview, UI and frontend interactivity only](http://35.187.97.19/index.html)
 
 # Project Title : Ride Share Website
 (Project status: completed Phase#2 - UI design and frontend development)
@@ -59,4 +60,4 @@ This website adopts a number of [Google Map APIs](https://developers.google.com/
 
 ### Server and hosting
 + Source repository : [GitHub](https://github.com/)
-+ Website hosting service : cloud hosting services for servers and websites (To be determined) 
++ Website hosting service : Google Cloud Platform
