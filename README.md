@@ -7,9 +7,10 @@ Professor : Dr. Mohammed Elhajj
 
 Student   : Wang Yat SIN
 
-Project preview URL (project status undergoing - completed Phase#2 Conceptual and UI design) : 
+Project preview URL (project status undergoing - completed Phase#2.2 Conceptual and UI design with frontend interactivity) : 
 
 Preview (@Google Cloud Server)
+
 [Click here to preview, UI and frontend interactivity only](http://35.187.97.19/index.html)
 
 # Project Title : Ride Share Website
