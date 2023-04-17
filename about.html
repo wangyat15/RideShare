@@ -9,6 +9,24 @@
   <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/javascript.js"></script>
   <script src="./js/jquery.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#showid").click(function(){
+        $("#Show").toggle();
+      });
+      $("#showIntroductionID").click(function(){
+        $("#ShowIntroduction").toggle();
+      });
+      $("#ShowProblemID").click(function(){
+        $("#ShowProblem").toggle();
+      });
+      $("#ShowSolutionID").click(function(){
+        $("#ShowSolution").toggle();
+      });
+  
+    });
+  
+    </script>
 </head>
 <body>
   <header id="mainHeader">
@@ -40,12 +58,12 @@
     
     
     <section id="main">
-      <h2>About <button id="showid" onclick="Show()">hide-About</button></h2>
+      <h2>About <button id="showid">hide/show-About</button></h2>
       <div id="Show">
       
 
       
-      <h3>1. Introduction <button id="showIntroductionID" onclick="ShowIntroduction()">hide-Introduction</button></h3>
+      <h3>1. Introduction <button id="showIntroductionID">hide/show-Introduction</button></h3>
       <div id="ShowIntroduction">
       <p>
       The objective of this application is to let people to save money by sharing a taxi ride or a car ride. There is a lot of competition for online car booking service (like Uber). But a service where people can share the same car to go to the same destination are rather less well-known. Therefore, I think this proposal would be a good idea to expand on that niche field which could easily attract more new-users who are exactly looking for this type of service. I will go over the detail on how this application would work below.
@@ -54,7 +72,7 @@
       
       <br>
            
-      <h3>2. Problem statement <button id="ShowProblemID" onclick="ShowProblem()">hide-Problem Statement</button></h3>
+      <h3>2. Problem statement <button id="ShowProblemID">hide/show-Problem Statement</button></h3>
       <div id="ShowProblem">
       <p>
       Taxi fee is expensive for most of the people but it’s the most convenient and it takes the direct and fastest route to the desired destination. On the other hand, when people choose public transport, while it will be cheaper. However, there are usually no direct route to the desired destination. On top of that, public transport might have unexpected delay, hence taking longer than expected to arrive to destination. Driving car is not exactly a feasible solution as well, not only car fuel is expensive. Especially during work hours, there are constant traffic jams in more crowded areas. At the end, they will need to find a place to park their vehicle. Encouraging the usage of private car will also create more air pollution, because they could have used public transport.
@@ -65,7 +83,7 @@
       
 
       
-      <h3>3. Problem solution<button id="ShowSolutionID" onclick="ShowSolution()">hide-Problem Solution</button></h3>
+      <h3>3. Problem solution<button id="ShowSolutionID">hide/show-Problem Solution</button></h3>
       <div id="ShowSolution">
       <p>
       Solution for Ridesharing as reducing traffic congestion and parking problem, and more importantly the air pollution problem of the world.
