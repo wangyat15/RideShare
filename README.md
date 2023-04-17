@@ -11,6 +11,8 @@ Project preview URL (project status undergoing - completed Phase#2.2 Conceptual 
 
 Preview (@Google Cloud Server)
 
+[Click here to preview on showing the driving path, distance and duration between two locations on Google Map](http://35.187.97.19/addrt.html)
+
 [Click here to preview, UI and frontend interactivity only](http://35.187.97.19/index.html)
 
 # Project Title : Ride Share Website
