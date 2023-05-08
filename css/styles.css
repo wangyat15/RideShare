@@ -1,0 +1,239 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+.container {
+  width: 97%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.clearFix {
+  clear: both;
+}
+#mainHeader {
+  background: red;
+  color: white;
+}
+#mainNav {
+  background: #ccc;
+  color: black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+#mainNav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#mainNav li {
+  display: inline;
+  padding: 5px 10px;
+}
+#mainNav a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+#mainNav li:hover {
+  background: #aaa;
+}
+
+#jumbo {
+  background-image: url('../images/bg.jpg');
+  background-size: auto 400%;  
+  background-position: center;
+  min-height: 50px;
+  text-align: center;
+}
+
+#jumbo h1 {
+  color: darkslateblue;
+  font-weight: bolder;
+  font-size: 30px;
+  padding-top: 8px;
+  line-height: 1.0em;
+  opacity: 1.0;
+}
+#jumbo p {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 8px;
+  line-height: 1.0em;
+}
+
+#main {
+  padding: 10px 30px;
+  border: 5px solid white;
+  box-sizing: border-box;
+  word-spacing: normal;
+  background-color:#C2E9E9;
+  overflow: hidden;
+}
+
+#table1 
+{
+  overflow-x: auto;
+  border:1px solid;
+  width: 100%;
+  border-collapse: collapse;
+  /* background:lightyellow;*/
+  text-align: left;
+}
+
+#table1 td, #table1 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table1 tr:nth-child(even){background-color: powderblue;}
+
+#table1 tr:hover {background-color: #ddd;}
+
+#table1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: lightskyblue;
+  color: white;
+}
+
+#table2
+{
+  overflow-x: auto;
+  border:1px solid;
+  width: 100%;
+  border-collapse: collapse;
+  /* background:lightyellow;*/
+  text-align: left;
+}
+
+#table2 td, #table2 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table2 tr:nth-child(even){background-color: powderblue;}
+
+#table2 tr:hover {background-color: #ddd;}
+
+#table2 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: lightskyblue;
+  color: white;
+}
+
+#sidebar {
+  float: left;
+  width: 70%;
+  padding: 10px;
+  border: 5px solid darkgreen;
+  box-sizing: border-box;
+  letter-spacing: .2em;
+  word-spacing: normal;
+  background-color:#C2E9E9; 
+}
+#sideleft {
+  float: left;
+  width: 65%;
+  padding: 10px;
+  border: 5px solid white;
+  box-sizing: border-box;
+  letter-spacing: .2em;
+  word-spacing: normal;
+  background-color:#C2E9E9; 
+  overflow: hidden;
+}
+#sideright {
+  float: right;
+  width: 35%;
+  padding: 10px;
+  border: 5px solid white;
+  box-sizing: border-box;
+  letter-spacing: .2em;
+  word-spacing: normal;
+  background-color:#C2E9E9; 
+  overflow: hidden;
+}
+
+#sidebar1 {
+  float: left;
+  width: 20%;
+  border: 5px solid darkgreen;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #C2E9E9;
+}
+
+#mainFooter {
+  background: red;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 5px;
+  line-height: 1.0em;
+
+}
+#pExample {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #333;
+  border-radius: 20px 10px 0 5px;
+  position: relative;
+}
+#pExample span:first-child {
+  position: absolute;
+  bottom: 20px;
+  right: 100px;
+  font-style: italic;
+  font-weight: 800;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+#pExample span:last-child {
+  position: absolute;
+  top: 100px;
+  left:30px;
+}
+#fixed {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  /* background:#ff652f; */
+  padding: 5px;
+}
+.button {
+  background-color: darkblue;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#lab {
+  color: navy;
+  font-weight: 900;
+}
+
+@media (max-width:600px){
+  #sidebar, #main,#sideright,#sideleft,#mainFooter,#table1,#table2 {
+    width: 100%;
+    float: none;
+    border: none;
+  }
+}
