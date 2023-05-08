@@ -56,7 +56,7 @@ This website adopts a number of [Google Map APIs](https://developers.google.com/
 +	computing the driving distance and time between the start and destination locations 
 + showing  the driving path and distance between the start and destination locations on the map
 + locating and finding the nearby address coordinates within specified distance in km
-
+ 
 ### Server and hosting
 + Source repository : [GitHub](https://github.com/)
-+ Website hosting service : cloud hosting services for servers and websites (To be determined) 
++ Website hosting service : [Google Cloud](https://cloud.google.com/)
