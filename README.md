@@ -63,6 +63,17 @@ This website adopts a number of [Google Map APIs](https://developers.google.com/
 ### Database and ER diagram
 + ER diagram and data structure : [ER Diagram](https://github.com/wangyat15/RideShare/blob/main/ER%20diagram%20and%20Database%20Entities.pdf)
 
-### Sample Screens
+### Sample Screens and layouts
+Home Screen (Search available ride share with driving path and distance)
+![image](https://user-images.githubusercontent.com/114657394/236914501-a7337545-64c5-4926-8273-e0f00e0d4f1d.png)
+
+View the details of a selected rideshare (with Driver’s Rating and Comment History)
+![image](https://user-images.githubusercontent.com/114657394/236914671-083acc8e-1767-403c-993d-47e74cd81970.png)
+
+List of ride share of a Passenger Member after signed in
 ![image](https://user-images.githubusercontent.com/114657394/236914283-5ee2e753-6a62-4a2e-b318-8d7bdfa87af4.png)
+
+View Accepted Ride Detail (with driving path, distance and time showed on Map)
+![image](https://user-images.githubusercontent.com/114657394/236914896-28b289a2-a427-48de-acaf-be24adf720ed.png)
+
 
