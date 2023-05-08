@@ -1,6 +1,7 @@
 <?php
   session_start();
   include("database.php");
+  $_SESSION['SID'] = 0;
   $_POST['sStartLocation'] = "";  // disable search option for testing 
   if (!empty($_POST['sStartLocation'])) {
     $sDate = $_POST['sDate'];
