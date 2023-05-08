@@ -59,3 +59,7 @@ This website adopts a number of [Google Map APIs](https://developers.google.com/
 ### Server and hosting
 + Source repository : [GitHub](https://github.com/)
 + Website hosting service : [Google Cloud](https://cloud.google.com/)
+
+### Database and ER diagram
++ ER diagram and data structure : [ER Diagram](https://github.com/wangyat15/RideShare/blob/main/ER%20diagram%20and%20Database%20Entities.pdf)
+
