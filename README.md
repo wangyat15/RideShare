@@ -7,12 +7,11 @@ Professor : Dr. Mohammed Elhajj
 
 Student   : Wang Yat SIN
 
-Project preview URL (project status undergoing - completed Phase#2 Conceptual and UI design) : 
+Project preview URL (project status - completed frontend, backend and database implementation) : 
 
-https://htmlpreview.github.io/?https://github.com/wangyat15/RideShare/blob/main/index.html
+http://35.187.97.19/
 
 # Project Title : Ride Share Website
-(Project status: completed Phase#2 - UI design and frontend development)
 
 ## 1.	Introduction
 
