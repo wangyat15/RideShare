@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RideShare Website</title>
+  <link rel="icon" href="./images/Logo1.png" sizes="2000x2000" type="image/png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/javascript.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#showid").click(function(){
+        $("#Show").toggle();
+      });
+      $("#showIntroductionID").click(function(){
+        $("#ShowIntroduction").toggle();
+      });
+      $("#ShowProblemID").click(function(){
+        $("#ShowProblem").toggle();
+      });
+      $("#ShowSolutionID").click(function(){
+        $("#ShowSolution").toggle();
+      });
+  
+    });
+  
+    </script>
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="container">
+        <h1>Ride Share Website</h1>
+    </div>
+  </header>
+
+  <nav id="mainNav">
+    <div class="container">
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signin.php">Sign in/up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="jumbo">
+    <div class="container">
+      <h1>Let's Start a RideShare</h1>
+      <p>Sharing a ride has numerous benefits such as reducing traffic congestion and parking demands. Ridesharing also helps to eliminate vehicle emissions and creates less stressful commutes. </p>
+    </div>
+  </section>
+  
+
+   <div class="container">
+    
+    
+    <section id="main">
+      <h2>About <button id="showid">hide/show-About</button></h2>
+      <div id="Show">
+      
+
+      
+      <h3>1. Introduction <button id="showIntroductionID">hide/show-Introduction</button></h3>
+      <div id="ShowIntroduction">
+      <p>
+      The objective of this application is to let people to save money by sharing a taxi ride or a car ride. There is a lot of competition for online car booking service (like Uber). But a service where people can share the same car to go to the same destination are rather less well-known. Therefore, I think this proposal would be a good idea to expand on that niche field which could easily attract more new-users who are exactly looking for this type of service. I will go over the detail on how this application would work below.
+      </p>
+      </div>
+      
+      <br>
+           
+      <h3>2. Problem statement <button id="ShowProblemID">hide/show-Problem Statement</button></h3>
+      <div id="ShowProblem">
+      <p>
+      Taxi fee is expensive for most of the people but it’s the most convenient and it takes the direct and fastest route to the desired destination. On the other hand, when people choose public transport, while it will be cheaper. However, there are usually no direct route to the desired destination. On top of that, public transport might have unexpected delay, hence taking longer than expected to arrive to destination. Driving car is not exactly a feasible solution as well, not only car fuel is expensive. Especially during work hours, there are constant traffic jams in more crowded areas. At the end, they will need to find a place to park their vehicle. Encouraging the usage of private car will also create more air pollution, because they could have used public transport.
+      </p>
+      </div>
+      
+      <br>
+      
+
+      
+      <h3>3. Problem solution<button id="ShowSolutionID">hide/show-Problem Solution</button></h3>
+      <div id="ShowSolution">
+      <p>
+      Solution for Ridesharing as reducing traffic congestion and parking problem, and more importantly the air pollution problem of the world.
+      </p>
+
+      <h4>For car drivers</h4>
+      <p>
+      Provide rideshare offer with details on date and time of the route, start location, destination, path in map, no of seats available and fare
+      </p>
+      <p>
+      Search for the passenger with locations, date and time, past rating and comments. If a passenger request is found, send a rideshare offer to passenger
+      </p>
+      <h4>For passengers</h4>
+      <p>
+      make a ride request with details on date and time of the ride, pickup location, destination location, offer fare
+      </p>
+      <p>
+      search for the rideshare offer with locations, date and time, and past rating and comments. If a rideshare offer is found, make a rideshare request to the driver
+      </p>
+      <p>
+      Alternatively, after booking a taxi ride, the passenger can make a rideshare offer with details on date and time of the route, start location, destination, path in map, no of seats available and fare
+      </p>
+
+      <h4>When matching the rideshare offer and request</h4>
+      <p>
+      a rideshare offer can match with multiple rideshare requests based on no. of available seats
+      </p>
+      <p>
+      Rideshare offer and request can be either accepted or rejected by either party
+      if the rideshare is accepted by both parties, it will be confirmed with pickup date, time, location and fare
+      </p>
+
+      <h4>After rideshare is completed</h4>
+      <p>
+      After the rideshare is completed, both driver and passenger will give rating and comment to the other party for future rideshare reference.
+      </p>
+      </div>
+    </section>
+    </div>
+    <div class="container">
+      <div id="main">
+        <a href="index.php" class="button">Return </a>
+      </div>
+      <div class="clearFix"></div>
+    </div>
+  </div>
+
+  <footer id="mainFooter">
+    <p>Copyright &copy; 2023 RideShare Website  </p>
+    <p>Imprint</p>
+    <p>This website is student lab work and does not necessarily reflect Constructor University Bremen opinions. Constructor University Bremen does not endorse this site, nor is it checked by Constructor University regularly, nor is it part of the official Constructor University Bremen web presence. </p>
+  </footer>
+</body>
+</html>
