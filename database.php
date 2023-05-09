@@ -1,8 +1,8 @@
 <?php
 // connect MySQL and database rideshare
 $hostName = "localhost";
-$userName = "ringo";
-$password = "496162";
+$userName = "rXXXXX";
+$password = "4XXXXXXXXX";
 $databaseName = "rideshare";
 $conn = new mysqli($hostName,$userName,$password,$databaseName);
 //echo '<script>alert("Testing")</script>';
