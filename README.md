@@ -7,9 +7,6 @@ Professor : Dr. Mohammed Elhajj
 
 Student   : Wang Yat SIN
 
-Project preview URL (project status - completed frontend, backend and database implementation) : 
-
-http://35.187.97.19/
 
 # Project Title : Ride Share Website
 
